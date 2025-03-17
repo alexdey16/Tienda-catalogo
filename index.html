@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Catálogo</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .contenedor { display: flex; flex-wrap: wrap; justify-content: center; }
+        .producto { width: 200px; margin: 20px; padding: 10px; border: 1px solid #ccc; text-align: center; }
+        .producto img { width: 100%; height: auto; }
+        .carrito { margin-top: 20px; padding: 10px; border: 2px solid #000; display: inline-block; }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido a Nuestra Tienda</h1>
+    <div class="contenedor" id="productos">
+        <div class="producto">
+            <img src="c:\Users\jhosm\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\831704EA3AEACC4E3E1962496FD593BF\Imagen de WhatsApp 2025-03-13 a las 17.12.58_5ed0496c.jpg" alt="Producto 1">
+            <h2>Producto 1</h2>
+            <p>Precio: $10</p>
+            <button onclick="agregarAlCarrito('Producto 1', 10)">Añadir al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="c:\Users\jhosm\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\E4C0565355A8FBF03916D0BD025E02C8\Imagen de WhatsApp 2025-03-13 a las 17.12.58_82e4a20c.jpg" alt="Producto 2">
+            <h2>Producto 2</h2>
+            <p>Precio: $15</p>
+            <button onclick="agregarAlCarrito('Producto 2', 15)">Añadir al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="https://via.placeholder.com/150" alt="Producto 3">
+            <h2>Producto 3</h2>
+            <p>Precio: $20</p>
+            <button onclick="agregarAlCarrito('Producto 3', 20)">Añadir al carrito</button>
+        </div>
+        <div class="producto">
+            <img src="https://via.placeholder.com/150" alt="Producto 4">
+            <h2>Producto 4</h2>
+            <p>Precio: $25</p>
+            <button onclick="agregarAlCarrito('Producto 4', 25)">Añadir al carrito</button>
+        </div>
+    </div>
+    
+    <div class="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="listaCarrito"></ul>
+        <p>Total: $<span id="total">0</span></p>
+    </div>
+    
+    <script>
+        let total = 0;
+        function agregarAlCarrito(nombre, precio) {
+            let lista = document.getElementById("listaCarrito");
+            let item = document.createElement("li");
+            item.textContent = `${nombre} - $${precio}`;
+            lista.appendChild(item);
+            total += precio;
+            document.getElementById("total").textContent = total;
+        }
+    </script>
+</body>
+</html>
